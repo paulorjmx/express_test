@@ -1,0 +1,10 @@
+.top-menu a
+{
+  color: white;
+  transition: ease-in 0.3s;
+}
+
+.top-menu a:hover 
+{
+  font-weight: bold;
+}

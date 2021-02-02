@@ -1,0 +1,41 @@
+<h1>Login</h1>
+<p>Preencha os campos abaixo para fazer o login no sistema.</p>
+<% 
+    if(typeof err_username_empty !== 'undefined')
+    {
+        if(err_username_empty != false)
+%>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            O campo <strong>Username</strong> não pode ficar vazio!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+<%
+    }
+%> 
+
+<% 
+    if(login != true)
+    {
+%> 
+        <form action="/login" method="POST">
+            <div class="mb-3">
+                <label for="user_name" class="form-label">Username</label>
+                    <input type="text" name="username" class="form-control" id="user_name" placeholder="Username">
+            </div>
+            <div class="mb-3">
+                <label for="pass" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="pass" placeholder="Password">
+            </div>
+            <div class="mb-3">
+                    <input type="submit" class="btn btn-primary" value="Login">
+            </div>
+        </form>
+<%
+    }
+    else 
+    {
+%>
+        <p>Logged in!</p>
+<%
+    }
+%>
